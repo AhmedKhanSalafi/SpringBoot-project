@@ -1,4 +1,4 @@
-package com.alibou.fileupload.student;
+package com.example.csv_to_mysql.student;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

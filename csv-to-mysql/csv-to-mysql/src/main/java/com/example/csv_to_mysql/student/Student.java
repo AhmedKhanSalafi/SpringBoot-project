@@ -1,4 +1,4 @@
-package com.alibou.fileupload.student;
+package com.example.csv_to_mysql.student;
 
 import com.fasterxml.jackson.databind.annotation.EnumNaming;
 import jakarta.persistence.Entity;
@@ -9,6 +9,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+
 
 @Getter
 @Setter
@@ -24,4 +26,5 @@ public class Student {
     private String firstname;
     private String lastname;
     private int age;
+
 }

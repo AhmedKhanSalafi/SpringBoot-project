@@ -1,4 +1,4 @@
-package com.alibou.fileupload.student;
+package com.example.csv_to_mysql.student;
 
 import com.opencsv.bean.CsvBindByName;
 import lombok.AllArgsConstructor;

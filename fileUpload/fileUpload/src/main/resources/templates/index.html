@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 500px; margin: 50px auto; }
+        input[type="file"] { margin-bottom: 20px; }
+        button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Upload File</h2>
+    <form id="uploadForm">
+        <input type="file" id="file" required />
+        <button type="button" onclick="uploadFile()">Upload</button>
+    </form>
+    <p id="message"></p>
+</div>
+
+<script>
+        function uploadFile() {
+            var formData = new FormData();
+            formData.append("file", document.getElementById("file").files[0]);
+
+            fetch('/api/files/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('message').innerText = data;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
